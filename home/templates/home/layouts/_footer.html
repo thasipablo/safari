@@ -2,28 +2,13 @@
   <div class="container">
     <div class="col-lg-8 col-md-8">
       <ul class="w3-agile">
-        <li><a href="index.html" class="page-scroll">Home</a></li>
+        <li><a href="{% url 'home:home' %}" class="page-scroll">Home</a></li>
+        {% if home %}
         <li><a href="#about" class="page-scroll">Programmes</a></li>
         <li><a href="#service" class="page-scroll">Agences</a></li>
+        {% endif %}
       </ul>
     </div>
-    <div class="col-lg-4 col-md-4">
-      <ul class="social-icons2">
-        <li>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-youtube"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-google-plus"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div class="clearfix"></div>
     <p class="text-center">&copy; 2021 Safari. All Rights Reserved</p>
   </div>
 </section>

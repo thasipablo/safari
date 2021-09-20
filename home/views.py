@@ -6,6 +6,7 @@ from agency.models import Program, Agency
 def home(request):
     context = {
         'latest_programs': Program.objects.filter().order_by('-id'),
-        'agencies': Agency.objects.all()
+        'agencies': Agency.objects.all(),
+        'home': True,
     }
     return render(request, 'home/home.html', context)
