@@ -25,3 +25,7 @@ class Program(models.Model):
 
     def __str__(self):
         return f'{self.go_from} to {self.go_to} - {self.agency.name}'
+
+    @property
+    def agency_name(self):
+        return self.agency.name

@@ -7,7 +7,8 @@
 <!-- about -->
 <section class="about-wthree" id="about">
   <div class="container">
-    <h1>Dernieres programmes</h1>
+    <h3 class="text-center" data-aos="zoom-in">Programmes recents</h3>
+    {% include 'agency/layouts/_programs.html' with programs=latest_programs %}
   </div>
 </section>
 <!-- /about -->
@@ -30,55 +31,7 @@
 <section class="service-agileinfo" id="service">
   <div class="container">
     <h3 class="text-center" data-aos="zoom-in">Nos Agences</h3>
-    <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-      <img
-        src="{% static 'home/images/ship.png' %}"
-        alt=""
-        class="img-responsive"
-      />
-      <h4 class="text-center">Lorem ipsum dolor</h4>
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem
-        elit, finibus et egestas ut, condimentum ut neque.
-      </p>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-      <img
-        src="{% static 'home/images/captain.png' %}"
-        alt=""
-        class="img-responsive"
-      />
-      <h4 class="text-center">adipiscing elit</h4>
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem
-        elit, finibus et egestas ut, condimentum ut neque.
-      </p>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-      <img
-        src="{% static 'home/images/anchor.png' %}"
-        alt=""
-        class="img-responsive"
-      />
-      <h4 class="text-center">Aenean sem elit</h4>
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem
-        elit, finibus et egestas ut, condimentum ut neque.
-      </p>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
-      <img
-        src="{% static 'home/images/baggage.png' %}"
-        alt=""
-        class="img-responsive"
-      />
-      <h4 class="text-center">condimentum ut</h4>
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem
-        elit, finibus et egestas ut, condimentum ut neque.
-      </p>
-    </div>
-    <div class="clearfix"></div>
+    {% include 'agency/layouts/_agencies.html' with agencies=agencies %}
   </div>
 </section>
 <!-- /services -->

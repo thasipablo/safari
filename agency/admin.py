@@ -11,4 +11,4 @@ class AgencyAdmin(admin.ModelAdmin):
 @admin.register(Program)
 class ProgramAdmin(admin.ModelAdmin):
     model = Program
-    list_display = ('go_from', 'go_to', 'go_date_time')
+    list_display = ('go_from', 'go_to', 'go_date_time', 'price')
