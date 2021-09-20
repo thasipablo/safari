@@ -21,6 +21,7 @@ class Program(models.Model):
         Agency, related_name="programs", on_delete=models.CASCADE)
     go_date_time = models.DateTimeField(auto_now=False, auto_now_add=False)
     places = models.IntegerField()
+    price = models.IntegerField()
 
     def __str__(self):
         return f'{self.go_from} to {self.go_to} - {self.agency.name}'
