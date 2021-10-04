@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Safari | Acceuil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <metaname ="keywords" content="Safari, Nord-Kivu, Traveling" />
+    <!-- fonts -->
+    <link
+      href="//fonts.googleapis.com/css?family=Cinzel:400,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <!-- /fonts -->
+    <!-- css -->
+    <link
+      href="{% static 'acceuil/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'acceuil/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'acceuil/css/gallery.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="css/jQuery.lightninBox.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'acceuil/css/aos.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'acceuil/css/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'acceuil/css/app.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <!-- /css -->
+    <!-- js -->
+    <script src="{% static 'acceuil/js/modernizr.min.js' %}"></script>
+    <!-- /js -->
+  </head>
+
+  <body>
+    {% block topbar %}{% endblock topbar %} {% block main %}{% endblock main %}
+
+    <!-- footer -->
+    {% include 'acceuil/layouts/_footer.html' %}
+    <!-- /footer -->
+    <!-- js files -->
+    <!-- js files -->
+    <script src="{% static 'acceuil/js/jquery.min.js' %}"></script>
+    <script src="{% static 'acceuil/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'acceuil/js/smoothscroll.js' %}"></script>
+    <script src="{% static 'acceuil/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'acceuil/js/grayscale.js' %}"></script>
+    <script src="{% static 'acceuil/js/aos.js' %}"></script>
+    <script src="{% static 'acceuil/js/index.js' %}"></script>
+    <!-- js for back to top -->
+    <script src="{% static 'acceuil/js/top.js' %}"></script>
+    <!-- /js for back to top -->
+    <!-- js for about lightbox -->
+    <script src="{% static 'acceuil/js/jQuery.lightninBox.js' %}"></script>
+    <script type="text/javascript">
+      $(".lightninBox").lightninBox();
+    </script>
+    <!-- /js for about lightbox -->
+    <!-- js for gallery -->
+    <script src="{% static 'acceuil/js/jquery.picEyes.js' %}"></script>
+    <script>
+      $(function () {
+        //picturesEyes($('li'));
+        $("ul.demo li").picEyes();
+      });
+    </script>
+    <!-- /js for gallery -->
+    <!-- js for banner -->
+    <script src="{% static 'acceuil/js/jquery.vide.js' %}"></script>
+    <!-- /js for banner -->
+    <!-- /js files -->
+  </body>
+</html>

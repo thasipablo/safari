@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # locals
-    'home.apps.HomeConfig',
-    'agency.apps.AgencyConfig',
+    'acceuil.apps.AcceuilConfig',
+    'agence.apps.AgenceConfig',
 ]
 
 MIDDLEWARE = [

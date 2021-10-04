@@ -1,0 +1,38 @@
+{% extends 'acceuil/_base.html' %} {% load static %} {% block main %}
+
+<!-- home -->
+{% include 'acceuil/layouts/_acceuil.html' %}
+<!-- /home -->
+
+<!-- programs -->
+<section class="about-wthree" id="about">
+  <div class="container">
+    <h3 class="text-center" data-aos="zoom-in">Programmes recents</h3>
+    {% include 'agence/layouts/_programmes.html' with programmes=dernier_programmes %}
+  </div>
+</section>
+<!-- /programs -->
+
+<!-- divider -->
+<section class="divider-wthree">
+  <div class="container">
+    <h3 class="text-center" data-aos="zoom-in">
+      Cruising - Enjoy The Difference.
+    </h3>
+    <p class="text-center" data-aos="zoom-in">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit,
+      finibus et egestas ut, condimentum ut neque.
+    </p>
+  </div>
+</section>
+<!-- /divider -->
+
+<!-- agencies -->
+<section class="service-agileinfo" id="service">
+  <div class="container">
+    <h3 class="text-center" data-aos="zoom-in">Nos Agences</h3>
+    {% include 'agence/layouts/_agences.html' with agences=agences %}
+  </div>
+</section>
+
+{% endblock main %}

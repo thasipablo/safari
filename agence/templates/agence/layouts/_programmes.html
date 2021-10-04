@@ -1,0 +1,36 @@
+{% load static %}
+<div class="programs-wrapper">
+  {% for prog in programmes %}
+  <div class="program">
+    <div class="img-wrapper">
+      <p>{{prog.itineraire.agence.denomination}}</p>
+      <img src="{% static 'acceuil/images/map-2.jpg' %}" alt="itineray img" />
+    </div>
+    <div class="infos">
+      <p>
+        <i class="card-icon fa fa-map-marker"></i> {{prog.lieu_depart}} -
+        {{prog.go_to}}
+      </p>
+      <p><i class="card-icon fa fa-clock-o"></i> {{prog.date_heure_depart}}</p>
+      <p>
+        <i class="card-icon fa fa-compress"></i> Places disponible :
+        {{prog.places}}
+      </p>
+      <p><i class="card-icon fa fa-money"></i> Billet : {{prog.prix}} $</p>
+    </div>
+    <a href="{% url 'agence:reservation' prog.id %}" class="reserve"
+      >Reserver</a
+    >
+  </div>
+  {% empty %}
+  <p>Pas de programme disponible pour le moment</p>
+  {% endfor %}
+</div>
+{% if home %}
+<div class="all-program-link">
+  <a href="{% url 'agence:programmes' %}"
+    >Voir tous <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+
+{% endif %}

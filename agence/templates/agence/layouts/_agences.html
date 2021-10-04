@@ -1,0 +1,16 @@
+<div class="agencies-wrapper">
+  {% for ag in agences %}
+  <div class="col-lg-3 col-md-3 col-sm-6" data-aos="flip-down">
+    <img
+      src="{% if ag.logo %} {{ag.logo.url}} {% else %} agence-logo.jpg {% endif %}"
+      alt="{{ag.denomination}} logo"
+      class="img-responsive"
+    />
+    <h4 class="text-center agencies-name">
+      {{ag.denomination}} <br />
+      <small>{{ag.localisation}}</small>
+    </h4>
+  </div>
+  {% endfor %}
+  <div class="clearfix"></div>
+</div>

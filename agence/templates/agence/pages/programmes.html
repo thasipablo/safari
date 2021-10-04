@@ -1,0 +1,21 @@
+{% extends 'acceuil/_base.html' %} 
+
+{% block topbar %}
+<!-- navigation -->
+{% include 'acceuil/layouts/_navigation.html' %} 
+
+<!-- /navigation -->
+{% endblock%}
+
+<!-- main -->
+{% block main %}
+<!-- programs -->
+<section class="about-wthree">
+  <h3 class="text-center" data-aos="zoom-in">Programmes</h3>
+  <div class="container">
+    {% include 'agence/layouts/_programmes.html' with programmes=dernier_programmes %}
+  </div>
+</section>
+<!-- /programs -->
+{% endblock %}
+<!-- /main -->

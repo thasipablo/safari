@@ -1,0 +1,47 @@
+{% extends 'acceuil/_base.html' %}
+
+<!-- main content -->
+{% block main %}
+<div class="reservation-wrapper">
+  {% comment %}
+  <div class="programme">
+    <h2>{{program.agency.name}}</h2>
+    <div>
+      <table>
+        <tr>
+          <td>Lieu de depart</td>
+          <th>{{program.go_from}}</th>
+        </tr>
+        <tr>
+          <td>Destination</td>
+          <th>{{program.go_to}}</th>
+        </tr>
+        <tr>
+          <td>Places disponibles</td>
+          <th>{{program.places}}</th>
+        </tr>
+        <tr>
+          <td>Prix de Billet</td>
+          <th>{{program.price}}$</th>
+        </tr>
+        <tr>
+          <td>Date et heure de depart</td>
+          <th>{{program.go_date_time}}</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="participents">
+    <h2>Participants</h2>
+  </div>
+  <div class="form">
+    <h2>Completer pour reserver</h2>
+    <form>
+      {% csrf_token %} {{form.as_p}}
+      <button type="submit">Reserver</button>
+    </form>
+  </div>
+  {% endcomment %}
+  <h2>Reserver une place</h2>
+</div>
+{% endblock %}
