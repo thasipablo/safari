@@ -41,3 +41,11 @@ form {
 .reservations {
   flex: 6;
 }
+.reservations-list {
+  overflow: hidden;
+  padding: 1rem;
+  margin-right: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 2rem #d9dddf;
+}

@@ -18,3 +18,12 @@ def nouveau_programme(request):
         if form.is_valid:
             form.save()
         return redirect('dashboard:home')
+
+
+def details_programme(request, id_programme):
+    context = {
+        'programmes': Programme.objects.all(),
+        'programme': Programme.objects.get(id=id_programme),
+        'form': ProgrammeForm()
+    }
+    return render(request, 'dashboard/pages/dashboard.html', context)
