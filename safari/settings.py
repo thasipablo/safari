@@ -40,10 +40,14 @@ INSTALLED_APPS = [
 
     # 3rd party
     'rest_framework',
+    'crispy_forms',
+    'materializecssform',
 
     # locals
-    'acceuil.apps.AcceuilConfig',
     'agence.apps.AgenceConfig',
+    'users.apps.UsersConfig',
+    'acceuil.apps.AcceuilConfig',
+    'dashboard.apps.DashboardConfig'
 ]
 
 MIDDLEWARE = [
@@ -129,6 +133,10 @@ STATIC_ROOT = 'static'
 
 MEDIA_URL = '/medias/'
 MEDIA_ROOT = BASE_DIR / 'medias'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'redirection'
+LOGOUT_REDIRECT_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

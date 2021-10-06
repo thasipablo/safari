@@ -1,0 +1,43 @@
+{% extends 'dashboard/layouts/_admin_base.html' %}
+<!---->
+{% load materializecss %}
+
+<!-- main content -->
+{% block content %}
+<div class="dashboard">
+  <!-- liste des programmes -->
+  <div class="programmes">
+    <h2 class="main-title">Liste des programmes</h2>
+    <form action="#">
+      <h3>Nouveau programme</h3>
+      {% csrf_token %}
+      <!-- form -->
+      {{form}}
+      <input type="submit" value="Enregistrer" class="btn" />
+    </form>
+    <div class="programme-list">
+      {% for prog in programmes %}
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img
+            src="{{prog.itineraire.agence.logo.url}}"
+            alt="{{prog.itineraire.agence.denomination}} logo"
+            class="circle"
+          />
+          <span class="title">{{prog.itineraire}}</span>
+          <p>Depart : {{prog.date_heure_depart}}</p>
+          <a href="#!" class="secondary-content"
+            ><i class="material-icons">grade</i></a
+          >
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Liste des reservations -->
+  <div class="reservations">
+    {% include 'dashboard/layouts/_programme_details.html' %}
+  </div>
+</div>
+{% endblock %}
