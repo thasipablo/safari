@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 
-from agence.models import Programme
+from agence.models import Programme, Reservation
 from agence.forms import ProgrammeForm
 
 
@@ -21,9 +21,18 @@ def nouveau_programme(request):
 
 
 def details_programme(request, id_programme):
+    programme = Programme.objects.get(id=id_programme)
+    if programme:
+        reservations = Reservation.objects.filter(programme__id = programme.id)
+
+        print(reservations)
+    else:
+        reservations = []
+
     context = {
         'programmes': Programme.objects.all(),
-        'programme': Programme.objects.get(id=id_programme),
+        'programme': programme,
+        'reservations': reservations,
         'form': ProgrammeForm()
     }
     return render(request, 'dashboard/pages/dashboard.html', context)

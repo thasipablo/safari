@@ -46,6 +46,7 @@ class Client(models.Model):
 class Reservation(models.Model):
     programme =  models.ForeignKey(Programme, on_delete=models.CASCADE)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    paye = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.programme} - {self.client}'

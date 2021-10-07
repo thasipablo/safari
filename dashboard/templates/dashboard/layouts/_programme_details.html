@@ -1,6 +1,6 @@
 <!-- details de programme -->
 <div class="details-programme">
-  <h3>Détails sur les programme</h3>
+  <h3>Détails sur le programme</h3>
   <div class="cards">
     <div class="row">
       <div class="col s12 m4">
@@ -37,28 +37,20 @@
     <table class="striped highlight">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Item Name</th>
-          <th>Item Price</th>
+          <th>Reservateur</th>
+          <th>Payé</th>
+          <th>Acton</th>
         </tr>
       </thead>
 
       <tbody>
+        {% for reservation in reservations %}
         <tr>
-          <td>Alvin</td>
-          <td>Eclair</td>
-          <td>$0.87</td>
+          <td>{{reservation.client.nom}}</td>
+          <td>{% if reservation.paye %}Oui {%else%} Non {% endif %}</td>
+          <td>Actions</td>
         </tr>
-        <tr>
-          <td>Alan</td>
-          <td>Jellybean</td>
-          <td>$3.76</td>
-        </tr>
-        <tr>
-          <td>Jonathan</td>
-          <td>Lollipop</td>
-          <td>$7.00</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
