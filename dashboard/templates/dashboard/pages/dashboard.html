@@ -7,15 +7,15 @@
 <div class="dashboard">
   <!-- liste des programmes -->
   <div class="programmes">
-    <h2 class="main-title">Liste des programmes</h2>
-    <form action="#">
-      <h3>Nouveau programme</h3>
-      {% csrf_token %}
-      <!-- form -->
-      {{form}}
-      <input type="submit" value="Enregistrer" class="btn" />
-    </form>
-    <div class="programme-list">
+    <h2 class="main-title" style="position: relative">
+      Liste des programmes
+      <a
+        class="btn-floating halfway-fab waves-effect waves-light red"
+        href="{% url 'dashboard:nouveau-programme' %}"
+        ><i class="material-icons">add</i></a
+      >
+    </h2>
+    <div class="programme-list mt4">
       {% for prog in programmes %}
       <ul class="collection">
         <li class="collection-item avatar">
@@ -25,7 +25,7 @@
             class="circle"
           />
           <span class="title">{{prog.itineraire}}</span>
-          <p>Depart : {{prog.date_heure_depart}}</p>
+          <p>Départ : le {{prog.date_depart}} à {{prog.heure_depart}}</p>
           <a
             href="{% url 'dashboard:programme-details' prog.id %}"
             class="secondary-content"

@@ -11,6 +11,9 @@ h3 {
   background: #73adf0;
   padding: 1rem;
 }
+.card-title {
+  font-size: 1.8rem;
+}
 .dashboard {
   padding: 2rem;
   height: 100vh;
@@ -20,7 +23,7 @@ h3 {
 }
 .programmes {
   flex: 2;
-  overflow: scroll;
+  overflow: hidden;
   /* padding: 1rem; */
   margin-right: 2rem;
   background-color: white;

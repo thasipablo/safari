@@ -11,7 +11,7 @@ class AgenceAdmin(admin.ModelAdmin):
 @admin.register(Programme)
 class ProgrammeAdmin(admin.ModelAdmin):
     model = Programme
-    list_display = ('itineraire', 'date_heure_depart',  'prix')
+    list_display = ('itineraire', 'date_depart', 'heure_depart', 'prix')
 
     
 @admin.register(Itineraire)

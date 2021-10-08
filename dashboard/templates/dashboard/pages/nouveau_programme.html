@@ -1,0 +1,24 @@
+{% extends 'dashboard/layouts/_admin_base.html' %} {% load materializecss %}
+
+<!--main content-->
+{% block content %}
+<div class="row">
+  <div
+    class="col offset-m3 l4 offset-l4 z-depth-9 card mt-4"
+    style="margin-top: 5rem; border-radius: 0.5rem"
+  >
+    <h1 class="card-title">Nouveau programme</h1>
+
+    <form action="{% url 'agence:enregister-programme' %}" method="post">
+      {% csrf_token %} {{ form|materializecss }}
+      <button type="submit" class="btn">Enregistrer</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const timeField = document.querySelector("input[name='heure_depart']");
+  timeField.removeAttribute("type");
+  timeField.setAttribute("type", "time");
+</script>
+{% endblock %}

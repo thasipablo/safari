@@ -27,7 +27,8 @@ class Programme(models.Model):
     prix = models.FloatField()
     itineraire = models.ForeignKey(
         Itineraire, related_name="itineraires", on_delete=models.CASCADE)
-    date_heure_depart = models.DateTimeField(auto_now=False, auto_now_add=False)
+    date_depart = models.DateField()
+    heure_depart = models.TimeField()
     places = models.IntegerField()
 
     def __str__(self):
