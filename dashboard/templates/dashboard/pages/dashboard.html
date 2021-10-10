@@ -4,6 +4,14 @@
 
 <!-- main content -->
 {% block content %}
+<nav style="background: #3d6ed6">
+  <div class="nav-wrapper" style="margin-left: 2rem; margin-right: 2rem">
+    <a href="#" class="brand-logo"> SAFARI :: Dashboard</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="{% url 'acceuil:acceuil' %}">Acceuil</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="dashboard">
   <!-- liste des programmes -->
   <div class="programmes">

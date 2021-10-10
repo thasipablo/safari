@@ -22,6 +22,15 @@
   padding: 1rem 3rem;
   border-radius: 0.25rem;
 }
+.btn.reserver {
+  margin-top: 5px;
+  border: 1px solid orange !important;
+  color: orange !important;
+}
+.btn.reserver:hover {
+  color: white !important;
+  background: orange !important;
+}
 .program {
   width: 20%;
   padding: 1.5rem;

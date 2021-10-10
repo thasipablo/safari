@@ -12,6 +12,10 @@ def programmes(request):
     return render(request, 'agence/pages/programmes.html', context)
 
 
+def paypal(request):
+    return render(request, 'agence/pages/paypal.html')
+
+
 def enregistrer_programme(request):
     if request.method == "POST":
         form = ProgrammeForm(request.POST)
