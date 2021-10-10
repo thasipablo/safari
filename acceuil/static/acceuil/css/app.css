@@ -31,6 +31,9 @@
   color: white !important;
   background: orange !important;
 }
+.program .infos {
+  margin-top: 1rem;
+}
 .program {
   width: 20%;
   padding: 1.5rem;
@@ -56,8 +59,23 @@
   height: 50px;
 }
 
-.reservation-wrapper {
-  display: flex;
-  justify-content: space-evenly;
+.reservation-payement,
+.reservation-form,
+.dom-ready {
+  text-align: center;
+  width: 450px;
+  margin: 4rem auto;
   padding: 2rem;
+}
+
+.reservation-payement,
+.reservation-form {
+  padding: 2rem;
+  box-shadow: 0.5rem 0.5rem 2rem #33333317;
+}
+
+.reservation-payement h2 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #adadad;
 }

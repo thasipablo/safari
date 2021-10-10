@@ -8,17 +8,20 @@
     </div>
     <div class="infos">
       <p>
-        <i class="card-icon fa fa-map-marker"></i> {{prog.lieu_depart}} -
+        <i class="card-icon fa fa-map-marker"></i> {{prog.itineraire}} -
         {{prog.go_to}}
       </p>
-      <p><i class="card-icon fa fa-clock-o"></i> {{prog.date_heure_depart}}</p>
+      <p>
+        <i class="card-icon fa fa-clock-o"></i> {{prog.date_depart}} à
+        {{prog.heure_depart}}
+      </p>
       <p>
         <i class="card-icon fa fa-compress"></i> Places disponible :
         {{prog.places}}
       </p>
       <p><i class="card-icon fa fa-money"></i> Billet : {{prog.prix}} $</p>
     </div>
-    <a href="{% url 'agence:reservation' prog.id %}" class="reserve"
+    <a href="{% url 'agence:reservation' prog.id %}" class="reserver btn"
       >Reserver</a
     >
   </div>

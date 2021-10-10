@@ -18,6 +18,7 @@
     />
     <!-- /fonts -->
     <!-- css -->
+    {% block styles %}
     <link
       href="{% static 'acceuil/css/bootstrap.min.css' %}"
       rel="stylesheet"
@@ -61,6 +62,7 @@
       media="all"
     />
     <!-- /css -->
+    {% endblock %}
     <!-- js -->
     <script src="{% static 'acceuil/js/modernizr.min.js' %}"></script>
     <!-- /js -->

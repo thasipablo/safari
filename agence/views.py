@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
-from .models import Programme, Agence
-from .forms import ProgrammeForm
+from .models import Programme, Agence, Reservation
+from .forms import ProgrammeForm, ReservationForm, ClientForm
 
 
 def programmes(request):
@@ -24,4 +24,10 @@ def enregistrer_programme(request):
         return redirect('dashboard:home')
 
 def reservation(request, programme_id):
-    return render(request, 'agence/pages/reservation.html')
+    form = ClientForm()
+    if request.method == 'POST':
+        form = ClientForm(request.POST)
+        if (form.is_valid):
+            form.save()
+        return render(request, 'agence/pages/reservation-succes.html')
+    return render(request, 'agence/pages/reservation.html', {'form': form})
