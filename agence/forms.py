@@ -17,6 +17,6 @@ class ReservationForm(ModelForm):
 class ClientForm(ModelForm):
     class Meta:
         model = Client
-        fields = '__all__'
+        fields = ['nom', 'telephone', 'email', 'places']
 
 

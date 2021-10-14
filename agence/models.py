@@ -35,19 +35,29 @@ class Programme(models.Model):
         return f'{self.itineraire} - {self.prix}'
 
 
-class Client(models.Model):
-    nom = models.CharField(max_length=250, verbose_name='Nom Complet')
-    telephone = models.CharField(max_length=250, verbose_name="Numero de Telephone")
-    email = models.EmailField(max_length=254, null=True, blank=True)
+# class Reservation(models.Model):
+#     programme =  models.ForeignKey(Programme, on_delete=models.CASCADE)
+#     client = models.ForeignKey("Client", on_delete=models.CASCADE)
+#     paye = models.BooleanField(default=False)
 
-    def __str__(self):
-        return f'{self.nom} - {self.telephone}'
-
+#     def __str__(self):
+#         return f'{self.programme} - {self.client}'
 
 class Reservation(models.Model):
     programme =  models.ForeignKey(Programme, on_delete=models.CASCADE)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.ForeignKey("Client", on_delete=models.CASCADE)
     paye = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.programme} - {self.client}'
+
+
+class Client(models.Model):
+    nom = models.CharField(max_length=250, verbose_name='Nom Complet')
+    telephone = models.CharField(max_length=250, verbose_name="Numero de Telephone")
+    email = models.EmailField(max_length=254, null=True, blank=True)
+    places = models.IntegerField(default=1)
+    programme =  models.ForeignKey(Programme, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.nom} - {self.telephone}'

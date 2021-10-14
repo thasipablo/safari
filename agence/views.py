@@ -23,11 +23,16 @@ def enregistrer_programme(request):
             form.save()
         return redirect('dashboard:home')
 
+
 def reservation(request, programme_id):
     form = ClientForm()
+    return render(request, 'agence/pages/reservation.html', {'form': form})
+
+
+def enregistrer_reservation(request):
     if request.method == 'POST':
         form = ClientForm(request.POST)
         if (form.is_valid):
             form.save()
-        return render(request, 'agence/pages/reservation-succes.html')
-    return render(request, 'agence/pages/reservation.html', {'form': form})
+
+        return redirect('agence:programmes')

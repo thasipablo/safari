@@ -1,16 +1,16 @@
-{% extends 'acceuil/_base.html' %}
-{% load static %}
-
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'dashboard/css/materialize.min.css' %}">
-    <link rel="stylesheet" href="{% static 'acceuil/css/app.css' %}">
+{% extends 'acceuil/_base.html' %} {% load static %} {% block styles %}
+<link
+  rel="stylesheet"
+  href="{% static 'dashboard/css/materialize.min.css' %}"
+/>
+<link rel="stylesheet" href="{% static 'acceuil/css/app.css' %}" />
 {% endblock %}
 
 <!-- main content -->
 {% block main %}
 <div class="reservation-form">
   <h4>Reserver votre place</h4>
-  <form action="#">
+  <form action="{% url 'agence:enregistrer_reservation'%}" method="POST">
     {% csrf_token %} {{form}}
     <button type="submit" class="btn">Reserver</button>
   </form>
