@@ -5,7 +5,7 @@ from .models import Programme, Reservation, Client
 class ProgrammeForm(ModelForm):
     class Meta:
         model = Programme
-        fields = '__all__'
+        fields = ['prix', 'itineraire', 'date_depart', 'heure_depart', 'places']
 
         
 class ReservationForm(ModelForm):

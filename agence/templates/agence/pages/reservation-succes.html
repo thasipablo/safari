@@ -1,1 +1,14 @@
-<h1>Reservation enregistrée avec succès</h1>
+{% extends 'dashboard/layouts/_admin_base.html' %} {% load materializecss %}
+
+<!--main content-->
+{% block content %}
+<div class="row">
+  <div
+    class="col offset-m3 l4 offset-l4 z-depth-9 card mt-4"
+    style="margin-top: 5rem; border-radius: 0.5rem"
+  >
+    <h4>Reservation enregistrée avec succès</h4>
+    <h4>Votre code est: {{code}}</h4>
+  </div>
+</div>
+{% endblock %}

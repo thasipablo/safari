@@ -11,7 +11,22 @@
 <div class="reservation-form">
   <h4>Reserver votre place</h4>
   <form action="{% url 'agence:enregistrer_reservation'%}" method="POST">
-    {% csrf_token %} {{form}}
+    {% csrf_token %}
+    <!--formulaire-->
+    {{form}}
+    <tr>
+      <th></th>
+      <td>
+        <input
+          type="hidden"
+          name="programme"
+          value="{{programme}}"
+          required
+          id="id_programme"
+        />
+      </td>
+    </tr>
+
     <button type="submit" class="btn">Reserver</button>
   </form>
 </div>

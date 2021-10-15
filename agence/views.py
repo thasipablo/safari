@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
-from .models import Programme, Agence, Reservation
+from .models import Client, Programme, Agence, Reservation
 from .forms import ProgrammeForm, ReservationForm, ClientForm
 
 
@@ -21,18 +22,38 @@ def enregistrer_programme(request):
         form = ProgrammeForm(request.POST)
         if form.is_valid():
             form.save()
+        
+        prog = Programme.objects.latest('id')
+        prog.places_libres = request.POST["places"]
+        prog.save()
         return redirect('dashboard:home')
 
 
 def reservation(request, programme_id):
     form = ClientForm()
-    return render(request, 'agence/pages/reservation.html', {'form': form})
+    return render(request, 'agence/pages/reservation.html', {'form': form, 'programme': programme_id})
 
 
 def enregistrer_reservation(request):
     if request.method == 'POST':
+        print('programme:', request.POST['programme'])
         form = ClientForm(request.POST)
         if (form.is_valid):
             form.save()
+        
+        programme = Programme.objects.get(id=request.POST['programme'])
+        client = Client.objects.latest('id')
 
-        return redirect('agence:programmes')
+        code = f"{request.POST['nom'][0]}-{request.POST['telephone'][3:5]}-{request.POST['programme']}"
+        reservation = Reservation(programme=programme, client=client, code=code)
+        reservation.save()
+        
+        # mettre à jour les places
+        programme.places_libres -= client.places
+        programme.save()
+        
+        return redirect(reverse('agence:reservation_succes', kwargs=code))
+
+
+def reservation_succes(request, code):
+    return render(request, 'agence/pages/reservation-succes.html', {'code': code})

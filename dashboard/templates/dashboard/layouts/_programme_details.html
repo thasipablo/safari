@@ -22,7 +22,7 @@
       <div class="col s12 m3">
         <div class="card-panel blue darken-1">
           <span class="white-text">
-            <span class="card-title">18</span> <br />
+            <span class="card-title">{{programme.places_libres}}</span> <br />
             Places Libres
           </span>
         </div>
@@ -46,6 +46,7 @@
       <thead>
         <tr>
           <th>Reservateur</th>
+          <th>Nombre de laces</th>
           <th>Payé</th>
           <th>Acton</th>
         </tr>
@@ -55,6 +56,7 @@
         {% for reservation in reservations %}
         <tr>
           <td>{{reservation.client.nom}}</td>
+          <td>{{reservation.client.places}}</td>
           <td>{% if reservation.paye %}Oui {%else%} Non {% endif %}</td>
           <td>Actions</td>
         </tr>

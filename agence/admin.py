@@ -23,7 +23,7 @@ class ItineraireAdmin(admin.ModelAdmin):
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
     model = Reservation
-    list_display = ('programme', 'client')
+    list_display = ('code', 'programme', 'client')
 
     
 @admin.register(Client)

@@ -30,20 +30,14 @@ class Programme(models.Model):
     date_depart = models.DateField()
     heure_depart = models.TimeField()
     places = models.IntegerField()
+    places_libres = models.IntegerField(default=0)
 
     def __str__(self):
         return f'{self.itineraire} - {self.prix}'
 
-
-# class Reservation(models.Model):
-#     programme =  models.ForeignKey(Programme, on_delete=models.CASCADE)
-#     client = models.ForeignKey("Client", on_delete=models.CASCADE)
-#     paye = models.BooleanField(default=False)
-
-#     def __str__(self):
-#         return f'{self.programme} - {self.client}'
-
+      
 class Reservation(models.Model):
+    code = models.CharField(max_length=50, default='')
     programme =  models.ForeignKey(Programme, on_delete=models.CASCADE)
     client = models.ForeignKey("Client", on_delete=models.CASCADE)
     paye = models.BooleanField(default=False)
